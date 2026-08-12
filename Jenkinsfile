@@ -12,6 +12,7 @@ pipeline {
 
         stage('Build') {
             steps {
+
                 echo 'Building the Java application...'
                 sh './mvnw clean package -DskipTests'
             }
@@ -20,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running unit tests...'
-                sh './mvnw test'
+                sh './mvnw test-FAILED'
             }
         }
 
