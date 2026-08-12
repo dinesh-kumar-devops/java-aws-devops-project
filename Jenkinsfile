@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running unit tests...'
-                sh './mvnw test-FAILED'
+                sh './mvnw test'
             }
         }
 
