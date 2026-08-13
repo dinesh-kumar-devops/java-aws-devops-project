@@ -31,6 +31,13 @@ pipeline {
             }
         }
 
+       stage('Docker Build') {
+           steps {
+               echo 'Building Docker image...'
+               sh 'docker build -t order-service:${BUILD_NUMBER} .'
+            }
+        }
+
         stage('Deploy to EC2') {
             steps {
                 echo 'Deploying application to EC2...'
